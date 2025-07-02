@@ -7,7 +7,7 @@
     "value-keyword-case": "lower",
     "selector-type-case": "lower",
     "block-no-empty": true,
-    "font-family-name-quotes": "always-where-required", // Example of extending standard rules
-    "selector-pseudo-element-case": "lower" // Another common rule
+    "font-family-name-quotes": "always-where-required",
+    "selector-pseudo-element-case": "lower"
   }
 }
