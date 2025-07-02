@@ -1,0 +1,61 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ develop ] # Trigger deployment on pushes to the develop branch
+
+jobs:
+  build:
+    name: Build Static Site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # --- IMPORTANT: Refine Build Script for Task 3 ---
+      # Ensure your package.json build script handles all pages and assets correctly.
+      # Example package.json build script (ensure it's in your package.json):
+      # "scripts": {
+      #   "build": "parcel build src/**/*.html styles/**/*.css --out-dir public --public-url /Blogging-Website/ --no-cache",
+      #   ...
+      # }
+      # NOTE: The --public-url should match your repository name if deploying to user/org pages.
+      # If deploying to a project page (e.g. username.github.io/Blogging-Website), use the repo name.
+      # If deploying to username.github.io (root), use `/`. Let's assume Project Page structure.
+      # Adjust '/Blogging-Website/' if your repo name is different.
+
+      - name: Build Static Website with Parcel
+        run: npm run build
+        env:
+          # If your build script requires environment variables, set them here.
+          # Parcel might need specific env vars depending on configuration.
+          # For simple static sites, this might not be necessary.
+          NODE_ENV: production # Good practice for build optimization
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public' # Specifies the directory containing the built site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build # Ensure build job completes successfully
+
+    permissions:
+      pages: write # Required permission for deploying to GitHub Pages
+      contents: read # Required to checkout the code
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        # This action automatically deploys the artifact uploaded by the 'build' job.

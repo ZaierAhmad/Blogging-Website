@@ -7,7 +7,7 @@
     "lint:html": "htmlhint src/**/*.html", // Lint HTML files in src
     "lint:css": "stylelint styles/**/*.css", // Lint CSS files in styles
     "lint": "npm run lint:html && npm run lint:css",
-    "build": "parcel build src/index.html src/pages/*.html styles/*.css --out-dir public --public-url ./"
+    "build": "parcel build src/**/*.html styles/**/*.css --out-dir public --public-url /Blogging-Website/ --no-cache"
   },
   "keywords": [],
   "author": "",
