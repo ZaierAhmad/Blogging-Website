@@ -54,6 +54,7 @@ jobs:
     permissions:
       pages: write # Required permission for deploying to GitHub Pages
       contents: read # Required to checkout the code
+      id-token: write
 
     steps:
       - name: Deploy to GitHub Pages
