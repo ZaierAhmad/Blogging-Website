@@ -1,0 +1,64 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [ develop ] # Trigger only for PRs targeting the develop branch
+    paths-ignore: # Optional: Ignore changes in certain files to avoid unnecessary runs
+      - 'README.md'
+      - '.github/**'
+
+jobs:
+  linting:
+    name: Lint Code
+    runs-on: ubuntu-latest # Use Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Checks out your repository code
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a specific Node.js version (e.g., 20 LTS)
+
+      - name: Install Dependencies
+        run: npm ci # 'ci' is generally recommended for CI environments for faster, cleaner installs
+
+      - name: Lint HTML and CSS
+        run: npm run lint # Executes the 'lint' script from package.json
+
+  build:
+    name: Build Website
+    runs-on: ubuntu-latest # Use Ubuntu runner
+    needs: linting # Ensure linting job passes before running build (optional but good practice)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Static Website with Parcel
+        run: npm run build # Executes the 'build' script from package.json
+
+      - name: Check build output directory
+        # This step ensures the build command actually produced output.
+        # Parcel typically outputs to 'dist' or 'public' based on config.
+        # We configured 'public' in Task 1.
+        run: |
+          if [ ! -d "public" ]; then
+            echo "Build output directory 'public/' not found!"
+            exit 1
+          else
+            echo "Build output directory 'public/' found."
+            ls -la public # List contents for verification
+          fi
+        # Note: The build script in package.json needs to be robust enough
+        # to handle the files you'll create in Task 5. For now, this verifies
+        # the build process runs without crashing.

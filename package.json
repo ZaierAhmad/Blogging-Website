@@ -4,6 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
+    "lint:html": "htmlhint src/**/*.html", // Lint HTML files in src
+    "lint:css": "stylelint styles/**/*.css", // Lint CSS files in styles
+    "lint": "npm run lint:html && npm run lint:css",
     "build": "parcel build src/index.html src/pages/*.html styles/*.css --out-dir public --public-url ./"
   },
   "keywords": [],
@@ -11,6 +14,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "htmlhint": "^1.6.3",
+    "parcel": "^2.15.4",
+    "stylelint": "^16.21.0",
+    "stylelint-config-standard": "^38.0.0"
   }
 }
