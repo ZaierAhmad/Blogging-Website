@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/**/*.html styles/**/*.css --out-dir public --public-url /Blogging-Website/ --no-cache",
+    "build": "parcel build src/**/*.html styles/**/*.css --dist-dir public --public-url /Blogging-Website/ --no-cache",
     "lint:html": "htmlhint src/**/*.html",
     "lint:css": "stylelint styles/**/*.css",
     "lint": "npm run lint:html && npm run lint:css"
