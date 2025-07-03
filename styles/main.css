@@ -50,10 +50,15 @@ main {
 }
 
 /* ADDED EMPTY LINE HERE */
+
 /* Fixed: rgba(0,0,0,0.1) -> rgb(0 0 0 / 10%) */
+
 /* Also handles color-function-notation */
+
 /* ADDED EMPTY LINE HERE */
+
 /* These comments were causing the error */
+
 /* Removed redundant comments that were part of the fix explanation */
 
 
