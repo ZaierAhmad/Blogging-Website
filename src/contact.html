@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us - My Awesome Blog</title>
+    <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
@@ -11,6 +12,7 @@
         <h1>My Awesome Blog</h1>
         <nav>
             <ul>
+                <!-- Links are relative and point directly to filenames -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -20,13 +22,41 @@
 
     <main>
         <h2>Get In Touch</h2>
-        <p>You can reach us via email at:</p>
-        <p><a href="mailto:contact@example.com">contact@example.com</a></p>
-        <!-- Add a form later if needed -->
+        <p>Have questions, feedback, or want to collaborate? Reach out to us!</p>
+        
+        <section class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:zaier.ahmad@example.com">zaier.ahmad@example.com</a></p>
+            <p><strong>University:</strong> UCP Lahore</p>
+            <!-- You could add more info like phone, address if relevant -->
+        </section>
+
+        <section class="contact-form">
+            <h3>Send us a Message</h3>
+            <!-- Basic form structure, typically requires server-side processing to be functional -->
+            <!-- For this assignment, the structure is sufficient -->
+            <form action="#" method="post"> <!-- Action '#' is a placeholder -->
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>© 2024 Muhammad Zaier Ahmad</p>
+        <p>© 2024 My Awesome Blog. All rights reserved.</p>
     </footer>
 </body>
 </html>
