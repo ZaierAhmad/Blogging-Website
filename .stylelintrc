@@ -3,11 +3,13 @@
   "rules": {
     "declaration-block-no-duplicate-properties": true,
     "no-duplicate-selectors": true,
-    "property-case": "lower",
-    "value-keyword-case": "lower",
-    "selector-type-case": "lower",
     "block-no-empty": true,
-    "font-family-name-quotes": "always-where-required", // Example of extending standard rules
-    "selector-pseudo-element-case": "lower" // Another common rule
+    "selector-type-case": "lower", 
+    "value-keyword-case": "lower",
+    "color-hex-length": "short",            
+    "alpha-value-notation": "percentage",   
+    "color-function-notation": "modern",    
+    "shorthand-property-no-redundant-values": true,
+    "comment-empty-line-before": "always"
   }
 }

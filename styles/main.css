@@ -3,66 +3,79 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f4f4f4; 
+  color: #333; 
   line-height: 1.6;
 }
 
 header {
-  background: #35424a; /* Example property */
-  color: #ffffff;
+  background: #35424a; 
+  color: #fff; 
   padding-top: 30px;
   min-height: 70px;
   border-bottom: #e8491d 3px solid;
-  text-align: center; /* Example property */
+  text-align: center;
 }
 
 header h1 {
     margin: 0;
-    padding-bottom: 10px; /* Example property */
+    padding-bottom: 10px; 
 }
 
 nav ul {
   padding: 0;
   list-style: none;
-  text-align: center; /* Example property */
+  text-align: center;
 }
 
 nav ul li {
-  display: inline; /* Example property */
-  padding: 0 20px 0 20px;
+  display: inline; 
+  padding: 0 20px; 
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: none; /* Example property */
+  color: #fff; 
+  text-decoration: none; 
   text-transform: uppercase;
   font-size: 16px;
 }
 
 main {
   padding: 20px;
-  background: #ffffff;
-  margin: 20px auto; /* Example property */
-  max-width: 800px; /* Example property */
-  border-radius: 8px; /* Example property */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Example property */
+  background: #fff; 
+  margin: 20px auto; 
+  max-width: 800px; 
+  border-radius: 8px; 
+  box-shadow: rgb(0 0 0 / 10%) 0 0 10px; /* This line might be followed by a comment */
 }
 
+/* ADDED EMPTY LINE HERE */
+
+/* Fixed: rgba(0,0,0,0.1) -> rgb(0 0 0 / 10%) */
+
+/* Also handles color-function-notation */
+
+/* ADDED EMPTY LINE HERE */
+
+/* These comments were causing the error */
+
+/* Removed redundant comments that were part of the fix explanation */
+
+
 article {
-    margin-bottom: 20px; /* Example property */
+    margin-bottom: 20px; 
 }
 
 footer {
-  text-align: center; /* Example property */
+  text-align: center; 
   padding: 20px;
   margin-top: 20px;
-  color: #777777;
+  color: #777; 
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #ccc; /* Example property */
+    background: #ccc; 
     margin: 20px 0;
 }

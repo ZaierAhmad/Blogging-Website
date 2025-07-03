@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
+    <title>Blog Posts - My Awesome Blog</title>
+    <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
@@ -11,6 +12,7 @@
         <h1>My Awesome Blog</h1>
         <nav>
             <ul>
+                <!-- Links are relative and point directly to filenames, assuming Parcel flattens output -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -19,22 +21,36 @@
     </header>
 
     <main>
-        <h2>All Blog Posts</h2>
+        <h2>All Our Blog Posts</h2>
+        
         <article>
-            <h3>First Blog Post Title</h3>
-            <p>Full content of the first blog post goes here...</p>
-            <p><em>Posted on: 2024-07-01</em></p>
+            <h3>Understanding Git Flow</h3>
+            <p>Git flow is a branching model that defines a strict structure for managing branches and features. It's crucial for collaborative development and managing releases effectively. Learn about main, develop, feature, release, and hotfix branches...</p>
+            <p><em>Posted on: 2024-07-15</em></p>
+            <a href="#">Read More</a> <!-- Placeholder link -->
         </article>
-        <hr>
+        
+        <hr> <!-- Separator -->
+        
         <article>
-            <h3>Another Post</h3>
-            <p>Full content of the second blog post...</p>
-            <p><em>Posted on: 2024-07-02</em></p>
+            <h3>Introduction to CI/CD with GitHub Actions</h3>
+            <p>Continuous Integration (CI) and Continuous Deployment (CD) automate the software delivery process. GitHub Actions provides a powerful way to build, test, and deploy your code directly from your repository...</p>
+            <p><em>Posted on: 2024-07-10</em></p>
+            <a href="#">Read More</a> <!-- Placeholder link -->
+        </article>
+
+        <hr> <!-- Separator -->
+
+        <article>
+            <h3>Styling Your Static Website with CSS</h3>
+            <p>Discover best practices for organizing your CSS, using semantic HTML, and ensuring your stylesheets are maintainable and scalable...</p>
+            <p><em>Posted on: 2024-07-05</em></p>
+            <a href="#">Read More</a> <!-- Placeholder link -->
         </article>
     </main>
 
     <footer>
-        <p>© 2024 Muhammad Zaier Ahmad</p>
+        <p>© 2024 My Awesome Blog. All rights reserved.</p>
     </footer>
 </body>
 </html>
